@@ -1880,7 +1880,8 @@ function(SETUP_ARDUINO_SIZE_SCRIPT OUTPUT_VAR)
 
     file(WRITE ${ARDUINO_SIZE_SCRIPT_PATH} "
         set(AVRSIZE_PROGRAM ${AVRSIZE_PROGRAM})
-        set(AVRSIZE_FLAGS -C --mcu=\${MCU})
+        set(AVRSIZE_FLAGS -B)
+#        set(AVRSIZE_FLAGS -C --mcu=\${MCU})
 
         execute_process(COMMAND \${AVRSIZE_PROGRAM} \${AVRSIZE_FLAGS} \${FIRMWARE_IMAGE} \${EEPROM_IMAGE}
                         OUTPUT_VARIABLE SIZE_OUTPUT)
